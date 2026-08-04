@@ -1,0 +1,1 @@
+DELETE https://cloud-api.yandex.net/v1/disk/resources?path=%2Fautotests%2Fdest_1583e9da&permanently=True

@@ -1,0 +1,1 @@
+PUT https://cloud-api.yandex.net/v1/disk/trash/resources/restore?path=trash%3A%2Ffolder_dee9df39_fabf55d88b5a79ee49d8a494744a6a6162d39832&overwrite=False

@@ -1,0 +1,1 @@
+PUT https://cloud-api.yandex.net/v1/disk/resources?path=%2Fautotests%2Ffolder_20504f0e

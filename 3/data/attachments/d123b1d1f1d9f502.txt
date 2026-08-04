@@ -1,0 +1,1 @@
+POST https://cloud-api.yandex.net/v1/disk/resources/copy?from=%2Fautotests%2Ffolder_ccb6df2d&path=%2Fautotests%2Fdest_1583e9da&overwrite=False

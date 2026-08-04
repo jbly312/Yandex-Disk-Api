@@ -1,0 +1,1 @@
+GET https://cloud-api.yandex.net/v1/disk/resources?path=%2Fautotests%2Ffolder_dee9df39
