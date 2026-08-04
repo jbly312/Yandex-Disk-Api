@@ -1,3 +1,5 @@
+from models.disk_info import DiskInfo
+
 class TestDiskInfo:
 
     def test_get_disk_info(self, disk_api):
@@ -5,8 +7,8 @@ class TestDiskInfo:
 
         assert response.status_code == 200
 
-    def test_disk_info_has_space_fields(self, disk_api):
-        body = disk_api.get_disk_info().json()
+    def test_disk_info_schema(self, disk_api):
+        info = DiskInfo(**disk_api.get_disk_info().json())
 
-        assert body["total_space"] > 0
-        assert body["used_space"] <= body["total_space"]
+        assert info.total_space > 0
+        assert info.used_space  <= info.total_space

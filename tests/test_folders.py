@@ -1,3 +1,4 @@
+from models.resource import Resource
 class TestFolders:
 
     def test_create_folder(self, disk_api, folder_path):
@@ -7,11 +8,12 @@ class TestFolders:
 
         disk_api.delete(folder_path)
 
-    def test_created_folder(self, disk_api, existing_folder):
+    def test_created_folder_is_dir(self, disk_api, existing_folder):
         body = disk_api.get_meta(existing_folder).json()
+        resource = Resource(**body)
 
-        assert body["type"] == "dir"
-        assert body["path"] == f"disk:{existing_folder}"
+        assert resource.type == "dir"
+        assert resource.path == f"disk:{existing_folder}"
 
     def test_create_duplicate(self, disk_api, existing_folder):
         response = disk_api.create_folder(existing_folder)

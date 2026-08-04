@@ -1,6 +1,6 @@
 from api.client import DiskClient
 RESOURCES = "/v1/disk/resources"
-
+TRASH = "/v1/disk/trash/resources"
 
 class DiskApi:
     def __init__(self, client: DiskClient):
@@ -39,3 +39,16 @@ class DiskApi:
             f"{RESOURCES}/publish",
             params={"path": path},
         )
+
+    def get_trash(self, path: str = "/", **params):
+        return self.client.get(TRASH, params={"path": path, **params})
+
+    def restore_from_trash(self, path: str, name: str | None = None, overwrite: bool = False):
+        params = {"path": path, "overwrite": overwrite}
+        if name:
+            params["name"] = name
+        return self.client.put(f"{TRASH}/restore", params=params)
+
+    def delete_from_trash(self, path: str | None = None):
+        params = {"path": path} if path else {}
+        return self.client.delete(TRASH, params=params)
