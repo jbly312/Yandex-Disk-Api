@@ -30,3 +30,7 @@ def existing_folder(disk_api, folder_path):
     disk_api.create_folder(folder_path)
     yield folder_path
     disk_api.delete(folder_path, permanently=True)
+
+@pytest.fixture
+def destination_path(test_root):
+    return f"{test_root}/dest_{uuid.uuid4().hex[:8]}"
