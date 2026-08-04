@@ -1,0 +1,1 @@
+DELETE https://cloud-api.yandex.net/v1/disk/trash/resources?path=trash%3A%2Ffolder_cf5959ca_7e0e66fe84f41733a3f516dac692673c6150e49d
